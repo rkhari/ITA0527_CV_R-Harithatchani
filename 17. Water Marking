@@ -1,0 +1,9 @@
+import cv2
+image = cv2.imread('original.jpg')
+watermark = cv2.imread('watermark.png')
+watermark = cv2.resize(watermark, (image.shape[1], image.shape[0]))
+watermarked = cv2.addWeighted(image, 0.8, watermark, 0.2, 0)
+cv2.imshow('Original Image', image)
+cv2.imshow('Watermarked Image', watermarked)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
