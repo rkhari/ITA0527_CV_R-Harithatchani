@@ -1,0 +1,8 @@
+import cv2
+image = cv2.imread("image.jpg")
+roi = image[100:300, 200:400]
+image[300:500, 100:300] = roi
+cv2.imshow("Original / Modified Image", image)
+cv2.imshow("Cropped ROI", roi)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
